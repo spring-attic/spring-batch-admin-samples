@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        maven {
+            mavenCentral()
+            url 'http://repo.springsource.org/libs-milestone/'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+ext {
+	springBatchAdminVersion = '2.0.0.BUILD-SNAPSHOT'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'spring-batch-admin-thymeleaf'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-batch")
+    compile("org.springframework.batch:spring-batch-admin-manager:$springBatchAdminVersion") {
+		exclude group: 'org.slf4j', module:'slf4j-log4j12'
+	}
+    testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
