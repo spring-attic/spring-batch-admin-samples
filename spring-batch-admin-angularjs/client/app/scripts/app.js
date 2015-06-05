@@ -16,7 +16,8 @@ angular
     //'ngRoute'
     //'ngSanitize',
     //'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ngTable'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     console.log('establishing routes');

@@ -20,7 +20,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'spring-batch-admin-thymeleaf'
+    baseName = 'spring-batch-admin-angularjs'
     version =  '0.1.0'
 }
 

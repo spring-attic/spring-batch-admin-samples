@@ -8,13 +8,17 @@
  * Controller of the clientApp
  */
 angular.module('batchAdmin')
-  .controller('MainCtrl', ['$state', '$scope', function ($state, $scope) {
-    $scope.somethingInteresting = 'yomamma';
-    console.log($state.current);
-    //$scope.awesomeThings = [
-      //'HTML5 Boilerplate',
-      //'AngularJS',
-      //'Karma'
-    //];
-
+  .controller('MainCtrl', ['$scope', 'ngTableParams', 'jobService', function ($scope, ngTableParams, jobService) {
+    $scope.tableParams = new ngTableParams({
+      page: 0,            // show first page
+      count: 10           // count per page
+    }, {
+      getData: function ($defer, params) {
+        jobService.getBatchConfigurations(params.page() - 1, params.count()).then(function (response) {
+          //console.log(response);
+          params.total(response.data.pagedResources.page.totalElements);
+          $defer.resolve(response.data.pagedResources.content);
+        });
+      }
+    });
   }]);
