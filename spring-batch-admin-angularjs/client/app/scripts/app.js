@@ -17,10 +17,17 @@ angular
     //'ngSanitize',
     //'ngTouch',
     'ui.router',
-    'ngTable'
+    'ngTable',
+    'services.config',
+    'angular-growl'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider, growlProvider) {
     console.log('establishing routes');
+
+    growlProvider.globalTimeToLive(5000);
+
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -28,6 +35,11 @@ angular
         url: '/',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .state('jobSummary', {
+        url: '/jobSummary?jobname',
+        templateUrl: 'views/jobSummary.html',
+        controller: 'JobSummaryCtrl'
       });
     //$routeProvider
     //  .when('/', {

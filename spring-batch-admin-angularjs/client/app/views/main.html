@@ -6,7 +6,7 @@
   <table ng-table="tableParams" class="table">
     <tr ng-repeat="job in $data">
       <td data-title="'Name'" class="text-center">
-        {{job.name}}
+        <a ui-sref="jobSummary({ jobname:job.name })">{{job.name}}</a>
       </td>
       <td data-title="'Execution Count'" class="text-center">
         {{job.executionCount}}
