@@ -14,7 +14,7 @@ angular.module('batchAdmin')
       count: 10           // count per page
     }, {
       getData: function ($defer, params) {
-        jobService.getBatchConfigurations(params.page(), params.count()).then(function (response) {
+        jobService.getBatchConfigurations(params.page() - 1, params.count()).then(function (response) {
           //console.log(response);
           params.total(response.data.pagedResources.page.totalElements);
           $defer.resolve(response.data.pagedResources.content);

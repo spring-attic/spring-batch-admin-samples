@@ -18,8 +18,9 @@ angular.module('batchAdmin')
       count: 10           // count per page
     }, {
       getData: function ($defer, params) {
-        jobService.getJobInstances($stateParams.jobname, params.page(), params.count()).then(function (response) {
-          console.log(response.data);
+        console.log(params);
+        jobService.getJobInstances($stateParams.jobname, params.page() - 1, params.count()).then(function (response) {
+          params.total(response.data.pagedResources.page.totalElements);
           $defer.resolve(response.data.pagedResources.content);
         });
       }
