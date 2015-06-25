@@ -43,7 +43,7 @@ angular
         controller: 'JobSummaryCtrl'
       })
       .state('jobExecution', {
-        url: '/jobExecution?jobName',
+        url: '/jobExecution?jobName&jobInstanceId',
         templateUrl: 'views/jobExecutions.html',
         controller: 'JobExecutionsCtrl'
       })

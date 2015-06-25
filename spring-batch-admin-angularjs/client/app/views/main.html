@@ -9,7 +9,7 @@
         <a ui-sref="jobSummary({ jobname:job.name })">{{job.name}}</a>
       </td>
       <td data-title="'Execution Count'" class="text-center">
-        {{job.executionCount}}
+        <a ui-sref="jobExecution({jobName: job.name})">{{job.executionCount}}</a>
       </td>
       <td data-title="'Launchable'" class="text-center">
         {{job.launchable}}
