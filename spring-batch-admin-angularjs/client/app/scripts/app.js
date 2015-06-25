@@ -51,15 +51,12 @@ angular
         url: '/jobExecutionDetail?executionId',
         templateUrl: 'views/jobExecutionDetail.html',
         controller: 'JobExecutionDetailCtrl'
+      })
+      .state('stepExecutionDetail', {
+        url: '/stepExecutionDetail?jobExecutionId&stepExecutionId',
+        templateUrl: 'views/stepExecutionDetail.html',
+        controller: 'StepExecutionDetailCtrl'
       });
-    //$routeProvider
-    //  .when('/', {
-    //    templateUrl: 'views/main.html',
-    //    controller: 'MainCtrl'
-    //  })
-    //  .otherwise({
-    //    redirectTo: '/error'
-    //  });
   })
     .run(function($rootScope, $state, $stateParams) {
       $rootScope.$state = $state;
