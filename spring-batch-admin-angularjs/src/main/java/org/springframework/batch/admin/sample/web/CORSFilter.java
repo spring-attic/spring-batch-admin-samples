@@ -33,8 +33,8 @@ import org.springframework.stereotype.Component;
  *
  * <em>Note:</em> This is added for development purposes only (so you can run the services
  * on port 8080 (Tomcat's default) and use Grunt to serve the javascript application from
- * port 9000.  <b>This implementation is not secure by default and should not be used in a
- * production environment.</b>
+ * port 9000.  <b>This implementation is not secure and should not be used in a
+ * production environment!</b>
  *
  * @author Michael Minella
  */
@@ -47,7 +47,7 @@ public class CORSFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		response.setHeader("Access-Control-Allow-Origin", "*");
 
-		response.setHeader("Access-Control-Allow-Methods", "*");
+		response.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
 		response.setHeader("Access-Control-Max-Age", "3600");
 		response.setHeader("Access-Control-Allow-Headers", request.getHeader("Access-Control-Request-Headers"));
 		chain.doFilter(req, res);

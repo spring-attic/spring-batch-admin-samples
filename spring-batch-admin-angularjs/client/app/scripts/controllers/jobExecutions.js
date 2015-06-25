@@ -2,22 +2,27 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name clientApp.controller:JobExecutionsCtrl
  * @description
- * # MainCtrl
+ * # JobExecutionsCtrl
  * Controller of the clientApp
  */
 angular.module('batchAdmin')
-  .controller('MainCtrl', ['$scope', 'ngTableParams', 'jobService', function ($scope, ngTableParams, jobService) {
+  .controller('JobExecutionsCtrl', ['$stateParams', '$scope', 'ngTableParams', 'jobService', function ($stateParams, $scope, ngTableParams, jobService) {
+
     $scope.tableParams = new ngTableParams({
       page: 0,            // show first page
       count: 10           // count per page
     }, {
       getData: function ($defer, params) {
-        jobService.getBatchConfigurations(params.page() - 1, params.count()).then(function (response) {
+        jobService.getJobExecutions($stateParams.jobName, params.page() - 1, params.count()).then(function (response) {
           params.total(response.data.pagedResources.page.totalElements);
           $defer.resolve(response.data.pagedResources.content);
         });
       }
     });
+
+    $scope.stopAll = function() {
+      jobService.stopAll();
+    };
   }]);

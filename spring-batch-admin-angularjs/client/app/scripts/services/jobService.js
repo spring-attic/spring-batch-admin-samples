@@ -30,10 +30,35 @@ angular.module('batchAdmin')
           growl.success('Job ' + jobName + ' launched.');
         })
         .error(function() {
-          console.log('there was an error');
+          growl.error('Job ' + jobName + ' was unable to be launched.');
         });
     }
 
-    return {getBatchConfigurations: getBatchConfigurations, getJobInstances: getJobInstances, launchJob: launchJob};
+    function getJobExecutions(jobName, page, size) {
+      var params = {
+        page: page,
+        size: size
+      };
+
+      if(jobName) {
+        params.jobname = jobName;
+      }
+
+      return $http.get(configuration.baseUrl + '/batch/executions', {
+        params: params
+      });
+    }
+
+    function stopAll() {
+      $http.put(configuration.baseUrl + '/batch/executions', 'stop=true')
+        .success(function() {
+          growl.success('All jobs have been requested to stop');
+        })
+        .error(function() {
+          growl.error('There was an error requesting the jobs stop');
+        });
+    }
+
+    return {getBatchConfigurations: getBatchConfigurations, getJobInstances: getJobInstances, launchJob: launchJob, getJobExecutions: getJobExecutions, stopAll: stopAll};
 
 }]);

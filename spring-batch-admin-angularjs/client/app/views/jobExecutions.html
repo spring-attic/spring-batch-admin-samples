@@ -1,0 +1,42 @@
+<h1>Batch Jobs</h1>
+
+<p class="index-page--subtitle"> This section lists all
+  available job executions previously or currently run.
+</p>
+<div id="batch-job-stop" class="row">
+  <div class="col-md-6">
+    <form novalidate class="simple-form">
+      <button ng-click="stopAll()">Stop All</button>
+    </form>
+  </div>
+</div>
+<div id="batch-jobs" class="tab-pane active col-md-12">
+  <table ng-table="tableParams" class="table">
+    <tr ng-repeat="job in $data">
+      <td data-title="'Id'" class="text-center">
+        {{job.executionId}}
+      </td>
+      <td data-title="'Instance'" class="text-center">
+        {{job.jobId}}
+      </td>
+      <td data-title="'Name'" class="text-center">
+        {{job.name}}
+      </td>
+      <td data-title="'Date'" class="text-center">
+        {{job.createDate | date:'MM/dd/yyyy'}}
+      </td>
+      <td data-title="'Start'" class="text-center">
+        {{job.startTime | date:'h:mma'}}
+      </td>
+      <!--<td data-title="'Last Job Execution Duration'" class="text-center">-->
+        <!--{{job.jobExecutions[job.jobExecutions.length - 1] | executionDuration}}-->
+      <!--</td>-->
+      <td data-title="'Status'" class="text-center">
+        {{job.status}}
+      </td>
+      <td data-title="'Exit Code'" class="text-center">
+        {{job.exitStatus.exitCode}}
+      </td>
+    </tr>
+  </table>
+</div>

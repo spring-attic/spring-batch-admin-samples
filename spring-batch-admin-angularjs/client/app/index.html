@@ -39,11 +39,11 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-class="{ active: $state.includes('home') }">
+          <li ng-class="{ active: $state.includes('home') || $state.includes('jobSummary') }">
             <a ui-sref="home">Jobs</a>
           </li>
-          <li ng-class="{ active: $state.includes('home.executions') }">
-            <a ui-sref="home.streams.tabs.executions">Executions</a>
+          <li ng-class="{ active: $state.includes('jobExecution') }">
+            <a ui-sref="jobExecution">Executions</a>
           </li>
           <li ng-class="{ active: $state.includes('home.files') }">
             <a ui-sref="home.jobs.tabs.files">Files</a>
@@ -103,6 +103,7 @@
     <script src="scripts/services/jobService.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/jobSummary.js"></script>
+    <script src="scripts/controllers/jobExecutions.js"></script>
     <script src="scripts/filters/executionDuration.js"></script>
     <script src="scripts/services/config.js"></script>
     <!-- endbuild -->

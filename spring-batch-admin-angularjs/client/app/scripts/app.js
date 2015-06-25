@@ -27,6 +27,7 @@ angular
     growlProvider.globalTimeToLive(5000);
 
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 
     $urlRouterProvider.otherwise('/');
 
@@ -40,6 +41,11 @@ angular
         url: '/jobSummary?jobname',
         templateUrl: 'views/jobSummary.html',
         controller: 'JobSummaryCtrl'
+      })
+      .state('jobExecution', {
+        url: '/jobExecution?jobName',
+        templateUrl: 'views/jobExecutions.html',
+        controller: 'JobExecutionsCtrl'
       });
     //$routeProvider
     //  .when('/', {
