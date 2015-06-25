@@ -14,7 +14,7 @@
   <table ng-table="tableParams" class="table">
     <tr ng-repeat="job in $data">
       <td data-title="'Id'" class="text-center">
-        {{job.executionId}}
+        <a ui-sref="jobExecutionDetail({executionId: job.executionId})">{{job.executionId}}</a>
       </td>
       <td data-title="'Instance'" class="text-center">
         {{job.jobId}}

@@ -42,7 +42,7 @@
           <li ng-class="{ active: $state.includes('home') || $state.includes('jobSummary') }">
             <a ui-sref="home">Jobs</a>
           </li>
-          <li ng-class="{ active: $state.includes('jobExecution') }">
+          <li ng-class="{ active: $state.includes('jobExecution') || $state.includes('jobExecutionDetail') }">
             <a ui-sref="jobExecution">Executions</a>
           </li>
           <li ng-class="{ active: $state.includes('home.files') }">
@@ -104,7 +104,8 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/jobSummary.js"></script>
     <script src="scripts/controllers/jobExecutions.js"></script>
-    <script src="scripts/filters/executionDuration.js"></script>
+    <script src="scripts/controllers/jobExecutionDetail.js"></script>
+    <script src="scripts/directives/duration.js"></script>
     <script src="scripts/services/config.js"></script>
     <!-- endbuild -->
 </body>

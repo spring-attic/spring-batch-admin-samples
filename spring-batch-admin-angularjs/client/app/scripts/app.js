@@ -46,6 +46,11 @@ angular
         url: '/jobExecution?jobName',
         templateUrl: 'views/jobExecutions.html',
         controller: 'JobExecutionsCtrl'
+      })
+      .state('jobExecutionDetail', {
+        url: '/jobExecutionDetail?executionId',
+        templateUrl: 'views/jobExecutionDetail.html',
+        controller: 'JobExecutionDetailCtrl'
       });
     //$routeProvider
     //  .when('/', {
