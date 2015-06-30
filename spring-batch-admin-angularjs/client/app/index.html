@@ -45,8 +45,8 @@
           <li ng-class="{ active: $state.includes('jobExecution') || $state.includes('jobExecutionDetail') || $state.includes('stepExecutionDetail') }">
             <a ui-sref="jobExecution">Executions</a>
           </li>
-          <li ng-class="{ active: $state.includes('home.files') }">
-            <a ui-sref="home.jobs.tabs.files">Files</a>
+          <li ng-class="{ active: $state.includes('fileUpload') }">
+            <a ui-sref="fileUpload">Files</a>
           </li>
           <li ng-class="{ active: $state.includes('home.about') }">
             <a ui-sref="home.about">About</a>
@@ -95,6 +95,8 @@
     <script src="bower_components/ng-table/dist/ng-table.min.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -106,6 +108,7 @@
     <script src="scripts/controllers/jobExecutions.js"></script>
     <script src="scripts/controllers/jobExecutionDetail.js"></script>
     <script src="scripts/controllers/stepExecutionDetail.js"></script>
+    <script src="scripts/controllers/fileUpload.js"></script>
     <script src="scripts/directives/duration.js"></script>
     <script src="scripts/services/config.js"></script>
     <!-- endbuild -->

@@ -19,7 +19,8 @@ angular
     'ui.router',
     'ngTable',
     'services.config',
-    'angular-growl'
+    'angular-growl',
+    'ngFileUpload'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider, growlProvider) {
     console.log('establishing routes');
@@ -56,6 +57,11 @@ angular
         url: '/stepExecutionDetail?jobExecutionId&stepExecutionId',
         templateUrl: 'views/stepExecutionDetail.html',
         controller: 'StepExecutionDetailCtrl'
+      })
+      .state('fileUpload', {
+        url: '/fileUpload',
+        templateUrl: 'views/fileUpload.html',
+        controller: 'FileUploadCtrl'
       });
   })
     .run(function($rootScope, $state, $stateParams) {

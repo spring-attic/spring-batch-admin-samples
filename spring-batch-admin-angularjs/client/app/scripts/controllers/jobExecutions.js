@@ -15,7 +15,6 @@ angular.module('batchAdmin')
       count: 10           // count per page
     }, {
       getData: function ($defer, params) {
-        console.log("jobInstanceId = " + $stateParams.jobInstanceId);
         if($stateParams.jobInstanceId) {
           jobService.getJobExecutionsForInstance($stateParams.jobName, $stateParams.jobInstanceId).then(function (response) {
             params.total(response.data.jobExecutionInfoResourceList.length);

@@ -32,6 +32,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-batch")
+    compile("org.springframework.batch:spring-batch-core:3.0.4.RELEASE")
     compile("org.springframework.batch:spring-batch-admin-manager:$springBatchAdminVersion") {
 		exclude group: 'org.slf4j', module:'slf4j-log4j12'
 	}

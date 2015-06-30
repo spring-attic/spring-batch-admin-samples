@@ -1,0 +1,31 @@
+<h1>File Upload</h1>
+<p class="index-page--subtitle">This page allows for the uploading of data files.
+</p>
+<div class="row">
+
+  <div class="col-md-12">
+
+    <h3>Select files</h3>
+
+    <div style="float:left; margin-right: 10px;">
+      <form name="myForm">
+        <fieldset>
+          <legend>Upload on form submit</legend>
+          Path: <input type="text" name="path" ng-model="path" size="39" required="">
+          <i ng-show="myForm.path.$error.required">*required</i><br>
+          Data File: <input type="file" ngf-select="" ng-model="picFile" name="file" accept="image/*" required="">
+          <i ng-show="myForm.file.$error.required">*required</i>
+          <br>
+
+          <button ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)">Submit</button>
+          <!--<img ng-show="picFile[0] != null" ngf-src="picFile[0]" class="thumb">-->
+          <span class="progress" ng-show="picFile[0].progress >= 0">
+            <div style="width:{{picFile[0].progress}}%" ng-bind="picFile[0].progress + '%'" class="ng-binding"></div>
+          </span>
+          <span ng-show="picFile[0].result">Upload Successful</span>
+        </fieldset>
+        <br>
+      </form>
+    </div>
+
+</div>

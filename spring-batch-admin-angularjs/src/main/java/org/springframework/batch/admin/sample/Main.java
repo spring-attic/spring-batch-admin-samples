@@ -19,11 +19,12 @@ import org.springframework.batch.admin.annotation.EnableBatchAdmin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration;
 
 /**
  * @author Michael Minella
  */
-@SpringBootApplication(exclude = {HypermediaAutoConfiguration.class})
+@SpringBootApplication(exclude = {HypermediaAutoConfiguration.class, MultipartAutoConfiguration.class})
 @EnableBatchAdmin
 public class Main {
 
