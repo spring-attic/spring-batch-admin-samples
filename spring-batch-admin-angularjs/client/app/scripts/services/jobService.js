@@ -68,21 +68,33 @@ angular.module('batchAdmin')
         });
     }
 
-      function getJobExecutionInfo(executionId) {
-        return $http.get(configuration.baseUrl + '/batch/executions/' + executionId);
-      }
+    function getJobExecutionInfo(executionId) {
+      return $http.get(configuration.baseUrl + '/batch/executions/' + executionId);
+    }
 
-      function getStepExecutionInfo(jobExecutionId, stepExecutionId) {
-        return $http.get(configuration.baseUrl + '/batch/executions/' + jobExecutionId + '/steps/' + stepExecutionId);
-      }
+    function getStepExecutionInfo(jobExecutionId, stepExecutionId) {
+      return $http.get(configuration.baseUrl + '/batch/executions/' + jobExecutionId + '/steps/' + stepExecutionId);
+    }
 
-    return {getBatchConfigurations: getBatchConfigurations,
+    function getFiles(page, size) {
+      return $http.get(configuration.baseUrl + '/batch/files', {
+        params: {
+          page: page,
+          size: size
+        }
+      });
+    }
+
+    return {
+      getBatchConfigurations: getBatchConfigurations,
       getJobInstances: getJobInstances,
       launchJob: launchJob,
       getJobExecutions: getJobExecutions,
       stopAll: stopAll,
       getJobExecutionInfo: getJobExecutionInfo,
       getStepExecutionInfo: getStepExecutionInfo,
-      getJobExecutionsForInstance: getJobExecutionsForInstance};
+      getJobExecutionsForInstance: getJobExecutionsForInstance,
+      getFiles: getFiles
+    };
 
 }]);

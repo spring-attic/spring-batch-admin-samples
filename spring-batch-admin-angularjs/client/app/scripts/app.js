@@ -20,7 +20,7 @@ angular
     'ngTable',
     'services.config',
     'angular-growl',
-    'ngFileUpload'
+    'angularFileUpload'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider, growlProvider) {
     console.log('establishing routes');
