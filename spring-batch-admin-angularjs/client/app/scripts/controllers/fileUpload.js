@@ -11,7 +11,7 @@ angular.module('batchAdmin')
   .controller('FileUploadCtrl', ['$scope', 'FileUploader', 'configuration', 'jobService', 'ngTableParams', function ($scope, FileUploader, configuration, jobService, ngTableParams) {
 
     var uploader = $scope.uploader = new FileUploader({
-      url: configuration.baseUrl + '/files',
+      url: configuration.baseUrl + '/batch/files',
       method: 'POST'
     });
 
@@ -23,6 +23,10 @@ angular.module('batchAdmin')
       }
 
       item.formData = [{ path: definedPath }];
+    };
+
+    uploader.onCompleteAll = function() {
+      $scope.tableParams.reload();
     };
 
     $scope.tableParams = new ngTableParams({
@@ -37,4 +41,8 @@ angular.module('batchAdmin')
         });
       }
     });
+
+    $scope.deleteFiles = function() {
+      jobService.deleteFiles($scope.path);
+    };
   }]);

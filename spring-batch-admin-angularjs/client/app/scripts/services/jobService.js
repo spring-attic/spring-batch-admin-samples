@@ -85,6 +85,14 @@ angular.module('batchAdmin')
       });
     }
 
+    function deleteFiles(path) {
+      return $http.delete(configuration.baseUrl + '/batch/files', {
+        params: {
+          path: path
+        }
+      });
+    }
+
     return {
       getBatchConfigurations: getBatchConfigurations,
       getJobInstances: getJobInstances,
@@ -94,7 +102,8 @@ angular.module('batchAdmin')
       getJobExecutionInfo: getJobExecutionInfo,
       getStepExecutionInfo: getStepExecutionInfo,
       getJobExecutionsForInstance: getJobExecutionsForInstance,
-      getFiles: getFiles
+      getFiles: getFiles,
+      deleteFiles: deleteFiles
     };
 
 }]);
