@@ -14,14 +14,14 @@
 
     <h3>Select files</h3>
 
-    <div ng-show="uploader.isHTML5">
+    <div class="hidden-xs" ng-show="uploader.isHTML5">
       <!-- 3. nv-file-over uploader="link" over-class="className" -->
-      <div class="well my-drop-zone col-md-4" nv-file-drop="" uploader="uploader">
+      <div class="well my-drop-zone col-md-4 " nv-file-drop="" uploader="uploader">
         Drop file here
       </div>
     </div>
 
-    <div class="col-md-1"> OR </div>
+    <div class="col-md-1 hidden-xs"> OR </div>
 
     <div class="col-md-7">
       <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
@@ -96,6 +96,15 @@
 
   <div id="data-files" ng-show="tableData" class="tab-pane active col-md-12">
     <h2>Data Files</h2>
+
+    <div class="pull-right">
+      <label for="pattern">Pattern to delete: </label>
+      <input ng-model="pattern" type="text" id="pattern" name="pattern" required="" /><em>&nbsp;Required</em>
+      <button type="button" class="btn btn-default btn-s" ng-click="deleteFiles()" ng-disabled="!pattern">
+        <span class="glyphicon glyphicon-trash"></span> Delete
+      </button>
+    </div>
+
     <table ng-table="tableParams" class="table">
       <tr ng-repeat="file in $data">
         <td data-title="'Local'" class="text-center">

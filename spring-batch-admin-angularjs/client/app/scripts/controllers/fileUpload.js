@@ -44,5 +44,6 @@ angular.module('batchAdmin')
 
     $scope.deleteFiles = function() {
       jobService.deleteFiles($scope.path);
+      $scope.tableParams.reload();
     };
   }]);

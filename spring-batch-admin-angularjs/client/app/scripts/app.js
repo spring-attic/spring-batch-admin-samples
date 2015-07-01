@@ -10,12 +10,6 @@
  */
 angular
   .module('batchAdmin', [
-    //'ngAnimate',
-    //'ngCookies',
-    //'ngResource',
-    //'ngRoute'
-    //'ngSanitize',
-    //'ngTouch',
     'ui.router',
     'ngTable',
     'services.config',
@@ -23,7 +17,6 @@ angular
     'angularFileUpload'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider, growlProvider) {
-    console.log('establishing routes');
 
     growlProvider.globalTimeToLive(5000);
 
