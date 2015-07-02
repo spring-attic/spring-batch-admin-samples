@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name clientApp.controller:JobSummaryCtrl
  * @description
- * # MainCtrl
- * Controller of the clientApp
+ * # JobSummaryCtrl
+ * Controller of the job summary page's functionality
  */
 angular.module('batchAdmin')
   .controller('JobSummaryCtrl', ['$scope', 'ngTableParams', 'jobService', '$stateParams', function ($scope, ngTableParams, jobService, $stateParams) {
@@ -30,6 +30,10 @@ angular.module('batchAdmin')
         jobParameters = launchRequest.jobParameters;
       }
 
-      jobService.launchJob($scope.jobName, jobParameters);
+      jobService.launchJob($scope.jobName, jobParameters).then(function() {
+
+        $scope.tableParams.reload();
+
+      });
     };
   }]);

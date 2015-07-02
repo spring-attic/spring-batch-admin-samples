@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name clientApp.directive:duration
  * @description
- * # MainCtrl
- * Controller of the clientApp
+ * # duration
+ * Duration calculations
  */
 angular.module('batchAdmin')
   .directive('duration', [function() {
@@ -19,7 +19,6 @@ angular.module('batchAdmin')
       if (startDateTime && endDateTime) {
         var duration = moment.duration(endDateTime - startDateTime);
         element.html(duration.asMilliseconds() + ' ms');
-        console.log(duration);
       }
     }
     element = el;

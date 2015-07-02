@@ -25,7 +25,7 @@ angular.module('batchAdmin')
     function launchJob(jobName, jobParameters) {
       var data = 'jobname=' + jobName + '&jobParameters=' + jobParameters;
 
-      $http.post(configuration.baseUrl + '/batch/executions', data)
+      return $http.post(configuration.baseUrl + '/batch/executions', data)
         .success(function() {
           growl.success('Job ' + jobName + ' launched.');
         })
@@ -59,7 +59,7 @@ angular.module('batchAdmin')
     }
 
     function stopAll() {
-      $http.put(configuration.baseUrl + '/batch/executions', 'stop=true')
+      return $http.put(configuration.baseUrl + '/batch/executions', 'stop=true')
         .success(function() {
           growl.success('All jobs have been requested to stop');
         })

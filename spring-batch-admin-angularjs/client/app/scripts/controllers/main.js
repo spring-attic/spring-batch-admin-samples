@@ -5,7 +5,7 @@
  * @name clientApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the clientApp
+ * Controller of the home page
  */
 angular.module('batchAdmin')
   .controller('MainCtrl', ['$scope', 'ngTableParams', 'jobService', function ($scope, ngTableParams, jobService) {

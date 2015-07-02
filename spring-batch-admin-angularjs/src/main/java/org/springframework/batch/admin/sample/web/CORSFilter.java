@@ -25,10 +25,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 /**
- * Provide Cross Origin Request permissions for the dashboard to talk to the REST API.
+ * <p>Provide Cross Origin Request permissions for the dashboard to talk to the REST API.
+ * Enabled with the spring profile "development"</p>
  *
  * <em>Note:</em> This is added for development purposes only (so you can run the services
  * on port 8080 (Tomcat's default) and use Grunt to serve the javascript application from
@@ -38,6 +40,7 @@ import org.springframework.stereotype.Component;
  * @author Michael Minella
  */
 @Component
+@Profile("development")
 public class CORSFilter implements Filter {
 
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)

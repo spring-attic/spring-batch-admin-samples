@@ -48,16 +48,6 @@
           <li ng-class="{ active: $state.includes('fileUpload') }">
             <a ui-sref="fileUpload">Files</a>
           </li>
-          <li ng-class="{ active: $state.includes('home.about') }">
-            <a ui-sref="home.about">About</a>
-          </li>
-          <li ng-if="user.authenticationEnabled"
-              class="dropdown"><a data-target="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li ng-if="user.isAuthenticated"><a ui-sref="logout">Logout</a></li>
-              <li ng-if="!user.isAuthenticated"><a ui-sref="login">Login</a></li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>

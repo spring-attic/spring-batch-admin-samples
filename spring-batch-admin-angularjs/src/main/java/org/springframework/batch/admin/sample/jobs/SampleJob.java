@@ -30,6 +30,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Sample Spring Batch Job.  This job takes a single, optional, job parameter: fail.  If
+ * set to true, the job will throw an exception and fail.
+ *
  * @author Michael Minella
  */
 @Configuration

@@ -22,6 +22,8 @@ import org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguratio
 import org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration;
 
 /**
+ * <p>Spring Boot launching point for Spring Batch Admin.</p>
+ *
  * @author Michael Minella
  */
 @SpringBootApplication(exclude = {HypermediaAutoConfiguration.class, MultipartAutoConfiguration.class})

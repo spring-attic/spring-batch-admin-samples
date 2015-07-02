@@ -5,7 +5,7 @@
  * @name clientApp.controller:JobExecutionsCtrl
  * @description
  * # JobExecutionsCtrl
- * Controller of the clientApp
+ * Controller of job executions page functionality
  */
 angular.module('batchAdmin')
   .controller('JobExecutionsCtrl', ['$stateParams', '$scope', 'ngTableParams', 'jobService', function ($stateParams, $scope, ngTableParams, jobService) {
@@ -30,6 +30,8 @@ angular.module('batchAdmin')
     });
 
     $scope.stopAll = function() {
-      jobService.stopAll();
+      jobService.stopAll().then(function() {
+        $scope.tableParams.reload();
+      });
     };
   }]);

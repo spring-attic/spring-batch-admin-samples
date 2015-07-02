@@ -5,12 +5,11 @@
  * @name clientApp.controller:JobExecutionDetailCtrl
  * @description
  * # StepExecutionDetailCtrl
- * Controller of the clientApp
+ * Controller of the step execution detail page
  */
 angular.module('batchAdmin')
   .controller('StepExecutionDetailCtrl', ['$stateParams', '$scope', 'jobService', function ($stateParams, $scope, jobService) {
     jobService.getStepExecutionInfo($stateParams.jobExecutionId, $stateParams.stepExecutionId).then(function (response) {
-      console.log(response.data.stepExecutionInfoResource);
       $scope.stepExecutionDetails = response.data.stepExecutionInfoResource;
     });
   }]);

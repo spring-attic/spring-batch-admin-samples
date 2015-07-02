@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name clientApp.controller:FileUploadCtrl
  * @description
- * # MainCtrl
- * Controller of the clientApp
+ * # FileUploadCtrl
+ * Controller for the file upload functionality
  */
 angular.module('batchAdmin')
   .controller('FileUploadCtrl', ['$scope', 'FileUploader', 'configuration', 'jobService', 'ngTableParams', function ($scope, FileUploader, configuration, jobService, ngTableParams) {
