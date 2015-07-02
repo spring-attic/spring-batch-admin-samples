@@ -1,6 +1,6 @@
 # Spring Batch Admin Samples
 
-This repository provides sample starter applications and code for use with the Spring Batch Admin project. The following samples are available:
+This repository provides sample starter applications and code for use with the Spring Batch Admin project. All samples are based on the Spring Batch Admin 2.0 or later.  The following samples are available:
 
-## Thymeleaf
-A Spring Boot based example UI developed using Thymeleaf as a templating mechansim.
+## Spring Batch Admin - AngularJS
+A Spring Boot based application with a front end developed with AngularJS.
