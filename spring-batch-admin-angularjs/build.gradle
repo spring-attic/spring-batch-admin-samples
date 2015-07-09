@@ -26,6 +26,9 @@ jar {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.spring.io/libs-snapshot-local/'
+    }
 }
 
 dependencies {
