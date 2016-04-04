@@ -9,7 +9,9 @@
       <h1>{{jobName}}</h1>
       <label class="col-md-12" for="launchRequest.name">Job Parameters</label>
       <textarea class="col-md-12" ng-model="launchRequest.jobParameters" placeholder="key=value pairs"></textarea>
-      <button ng-click="launch(launchRequest)">Launch</button>
+      <button type="button" class="btn btn-success" ng-click="launch(launchRequest)" title="Launch" style="margin-bottom: 1em">
+        <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Launch
+      </button>
     </form>
   </div>
 </div>
