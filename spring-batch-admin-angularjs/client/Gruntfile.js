@@ -74,36 +74,45 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
+          base: [
+            {
+              path: '.',
+              options: {
+                index: 'app/index.html'
+              }
+            },
+            {
+              path: './.tmp'
+            },
+            {
+              path: './bower_components'
+            },
+            {
+              path: './app'
+            }
+          ]
         }
       },
       test: {
         options: {
           port: 9001,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
+          base: [
+            {
+              path: '.',
+              options: {
+                index: 'app/index.html'
+              }
+            },
+            {
+              path: './.tmp'
+            },
+            {
+              path: './bower_components'
+            },
+            {
+              path: './app'
+            }
+          ]
         }
       },
       dist: {
@@ -188,14 +197,14 @@ module.exports = function (grunt) {
         fileTypes:{
           js: {
             block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-              detect: {
-                js: /'(.*\.js)'/gi
-              },
-              replace: {
-                js: '\'{{filePath}}\','
-              }
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
             }
           }
+        }
       }
     },
 
