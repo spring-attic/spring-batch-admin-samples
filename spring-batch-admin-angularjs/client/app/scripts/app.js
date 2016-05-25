@@ -14,7 +14,8 @@ angular
     'ngTable',
     'services.config',
     'angular-growl',
-    'angularFileUpload'
+    'angularFileUpload',
+    'jsonFormatter'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider, growlProvider) {
 

@@ -33,7 +33,7 @@
       </td>
       <td data-title="'Last Job Execution Duration'" class="text-center" duration start='job.jobExecutions[job.jobExecutions.length - 1].startTime' end='job.jobExecutions[job.jobExecutions.length - 1].endTime'></td>
       <td data-title="'Last Job Execution Parameters'" class="text-center">
-        {{job.jobExecutions[job.jobExecutions.length - 1].jobParameters.parameters}}
+        <json-formatter json="job.jobExecutions[job.jobExecutions.length - 1].jobParameters.parameters" open="0"></json-formatter>
       </td>
     </tr>
   </table>

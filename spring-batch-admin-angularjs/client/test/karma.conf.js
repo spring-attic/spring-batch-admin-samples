@@ -37,6 +37,7 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/angular-growl-v2/build/angular-growl.js',
       'bower_components/angular-file-upload/angular-file-upload.js',
+      'bower_components/json-formatter/dist/json-formatter.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
