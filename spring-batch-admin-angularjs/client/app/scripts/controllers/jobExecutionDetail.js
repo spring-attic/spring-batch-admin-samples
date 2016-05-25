@@ -12,4 +12,9 @@ angular.module('batchAdmin')
     jobService.getJobExecutionInfo($stateParams.executionId).then(function (response) {
       $scope.jobExecutionDetails = response.data.jobExecutionInfoResource;
     });
+
+    $scope.restartJob = function () {
+      jobService.restartJob($stateParams.executionId);
+    };
+
   }]);

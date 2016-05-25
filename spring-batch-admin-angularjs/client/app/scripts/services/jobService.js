@@ -34,6 +34,16 @@ angular.module('batchAdmin')
         });
     }
 
+    function restartJob(executionId) {
+      return $http.put(configuration.baseUrl + '/batch/executions/' + executionId, 'restart=true')
+        .success(function () {
+          growl.success('The job execution with id ' + executionId + ' has been successfully restarted.');
+        })
+        .error(function () {
+          growl.error('There was an error restarting the job execution with id ' + executionId);
+        });
+    }
+
     function getJobExecutions(jobName, page, size) {
       var params = {
         page: page,
@@ -97,6 +107,7 @@ angular.module('batchAdmin')
       getBatchConfigurations: getBatchConfigurations,
       getJobInstances: getJobInstances,
       launchJob: launchJob,
+      restartJob: restartJob,
       getJobExecutions: getJobExecutions,
       stopAll: stopAll,
       getJobExecutionInfo: getJobExecutionInfo,

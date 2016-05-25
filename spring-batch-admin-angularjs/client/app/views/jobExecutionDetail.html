@@ -64,7 +64,12 @@
     <tr>
     <tr>
       <td>Status</td>
-      <td ng-class="{'text-success': jobExecutionDetails.status === 'COMPLETED', 'text-danger': jobExecutionDetails.status === 'FAILED'}">{{jobExecutionDetails.status}}</td>
+      <td ng-show="jobExecutionDetails.status === 'FAILED'" ng-class="{'text-success': jobExecutionDetails.status === 'COMPLETED', 'text-danger': jobExecutionDetails.status === 'FAILED'}">
+        {{jobExecutionDetails.status}}
+        <button type="button" class="btn btn-default" ng-click="restartJob()" title="Restart">
+          <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+        </button>
+      </td>
     <tr>
     <tr>
       <td>Exit Code</td>

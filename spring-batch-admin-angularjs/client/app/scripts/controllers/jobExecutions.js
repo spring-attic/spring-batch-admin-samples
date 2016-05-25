@@ -34,4 +34,9 @@ angular.module('batchAdmin')
         $scope.tableParams.reload();
       });
     };
+
+    $scope.restartJob = function (executionId) {
+      jobService.restartJob(executionId);
+    };
+
   }]);
