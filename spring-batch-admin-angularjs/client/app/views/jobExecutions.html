@@ -37,8 +37,8 @@
       <td data-title="'Exit Code'" class="text-center">
         {{job.exitStatus.exitCode}}
       </td>
-      <td ng-show="job.status === 'FAILED'" data-title="'Actions'" class="text-center">
-        <button type="button" class="btn btn-default"
+      <td data-title="'Actions'" class="text-center">
+        <button ng-if="job.status === 'FAILED'" type="button" class="btn btn-default"
                 ng-click="restartJob(job.executionId)" title="Restart">
           <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Restart
         </button>
