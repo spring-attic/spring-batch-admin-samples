@@ -2,7 +2,7 @@ buildscript {
     repositories {
         maven {
             mavenCentral()
-            url 'http://repo.springsource.org/libs-milestone/'
+            url 'https://repo.springsource.org/libs-milestone/'
         }
     }
     dependencies {
