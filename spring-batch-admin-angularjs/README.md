@@ -46,7 +46,7 @@ Once the project has been built, you can launch the application via the command 
 There are two sample jobs provided in this example.  One is XML based and can be found in `src/main/resources/META-INF/spring/batch/jobs`.  The other is a Java config based job.  The Java configured job (`job`), takes an optional parameter `fail` to indicate if it should fail or not.
 
 ### Development Profile
-The front end for this project was generated using [Yeoman](http://yeoman.io) and uses the [Grunt](http://gruntjs.com) build system.  The development profile provides the ability to iterate on the front end independently of the back end.  To do so:
+The front end for this project was generated using [Yeoman](https://yeoman.io) and uses the [Grunt](https://gruntjs.com) build system.  The development profile provides the ability to iterate on the front end independently of the back end.  To do so:
 
 * Run the Spring Boot based app using your method of choice (`java -jar`, IDE, etc) with the `spring.profiles.active=development` configured in the `application.properties`.
 * From the client directory, run `$ grunt serve`.  This will launch a separate server on port 9000 that will serve the static resources.  It includes functionality like automatic reloading of the page in the browser as changes are made, etc.
